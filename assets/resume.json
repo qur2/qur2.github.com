@@ -1,0 +1,304 @@
+{
+  "basics": {
+    "name": "Aurélien Scoubeau",
+    "label": "Maker of things",
+    "picture": "",
+    "email": "aurelien.scoubeau@gmail.com",
+    "phone": "+49 176 98259453",
+    "website": "http://qur2.github.io",
+    "summary":
+      "Creative and motivated, I'm always looking forward to new challenges and learning something new. Being rigorous and solution oriented, I really enjoy working as part of a focused and interested team.",
+    "location": {
+      "address": "Oudenader Straße 31",
+      "postalCode": "13347",
+      "city": "Berlin",
+      "countryCode": "DE",
+      "region": "Berlin"
+    },
+    "profiles": [
+      {
+        "network": "Github",
+        "username": "qur2",
+        "url": "http://github.com/qur2"
+      },
+      {
+        "network": "Linkedin",
+        "username": "AScoubeau",
+        "url": "http://www.linkedin.com/in/aurelienscoubeau"
+      },
+      {
+        "network": "Twitter",
+        "username": "AScoubeau",
+        "url": "http://twitter.com/Ascoubeau"
+      },
+      {
+        "network": "500px",
+        "username": "qur2",
+        "url": "http://500px.com/qur2"
+      },
+      {
+        "network": "Flickr",
+        "username": "qur2",
+        "url": "https://www.flickr.com/photos/qur2/"
+      },
+      {
+        "network": "Stackoverflow",
+        "username": "qur2",
+        "url": "http://stackoverflow.com/users/2249185/qur2"
+      },
+      {
+        "network": "Google+",
+        "username": "",
+        "url": "https://plus.google.com/109883582351529784361/posts"
+      }
+    ]
+  },
+  "work": [
+    {
+      "company": "Feingold Technologies",
+      "position": "Senior Web Developer",
+      "website": "http://storecast.de",
+      "startDate": "2017-02-01",
+      "endDate": false,
+      "summary":
+        "Reinforcing an experienced team of frontend developers, I lend my expertise for a fast moving project, with a focus on UI/UX. I'm also owner of a custom admin tool. The company setup is very good and I've never been so productive before in a coroporate environment.",
+      "highlights": ["More React work", "Acquainted with Rxjs"]
+    },
+    {
+      "company": "Storecast",
+      "position": "Lead Web Developer",
+      "website": "http://storecast.de",
+      "startDate": "2015-09-07",
+      "endDate": "2017-01-31",
+      "summary":
+        "From point of sale projects to big online applications through static websites, everything runs in a browser nowadays. In that spirit, I selected a flexible set of libraries that work well together to bootstrap new projects as fast as possible. That includes mentoring people to bring them up to speed and managing our development power.",
+      "highlights": [
+        "Mastery of React",
+        "Deep dive in flux architectures",
+        "Poking around with nodejs clusters",
+        "Own continuous integration with Jenkins"
+      ]
+    },
+    {
+      "company": "Txtr",
+      "position": "Architect & Technical Lead",
+      "website": "http://txtr.com",
+      "startDate": "2014-01-01",
+      "endDate": "2015-03-31",
+      "summary":
+        "One the two main things I achieved was a rewrite of the multisite rendering engine, to cut off significant amount of database queries when rendering a page. The second one was to deploy a self-contained service for ebook reading, that sat next to the django platform.",
+      "highlights": [
+        "Experience with Flask and Readium",
+        "Jinja2 & Django CMS internal mechanics"
+      ]
+    },
+    {
+      "company": "Txtr",
+      "position": "Senior Web Developer",
+      "website": "http://txtr.com",
+      "startDate": "2013-08-01",
+      "endDate": "2013-12-31",
+      "summary":
+        "I contributed to the rejuvenation of a dynamic multisite platform. Similar to my previous tasks, and also more complex, my goal was to enable faster and unobstructed development so that we can add value to the platform in an efficient way. To achieve that, we focused on the core of the platform and forgot about various extensions.",
+      "highlights": ["Strong experience in Python & Django"]
+    },
+    {
+      "company": "Txtr",
+      "position": "Software Developer",
+      "website": "http://txtr.com",
+      "startDate": "2012-10-01",
+      "endDate": "2013-07-31",
+      "summary":
+        "Working in the web team, I contributed daily to improve and enlarge our Cloud Library system. I dealt with a big legacy codebase that needed to be brought back under control. That enabled further development tasks to be faster, easier and more straightforward. In parallel, I increased the level of agility in the team by exposing some improvements in our Git workflow.",
+      "highlights": ["Core of an ambitious platform"]
+    },
+    {
+      "company": "Delivery Hero",
+      "position": "Software Developer",
+      "website": "http://deliveryhero.com",
+      "startDate": "2012-02-01",
+      "endDate": "2013-09-30",
+      "summary":
+        "Having a central role in an ambitious project, I took part in the creation of a modulable and flexible frontend. The technology stack was based on Backbone.js (one of the main contender at that time), jQuery and SASS and everything was plugged on a RESTful API. During that project, my Javascript skills made a big step forward, as well as my understanding of frontend architectures in general.",
+      "highlights": [
+        "Javascript mastery",
+        "Real standalone web client",
+        "Part of a big team and company"
+      ]
+    },
+    {
+      "company": "TagExpert",
+      "position": "Web Developer",
+      "website": "http://tagexpert.be",
+      "startDate": "2009-09-01",
+      "endDate": "2012-01-31",
+      "summary":
+        "Setup as a web agency, I worked on very different projects. From large Drupal websites to interactive promotional material, we worked in an agile way and were able to deliver project fast.",
+      "highlights": [
+        "Rapid application development with Yii and CakePHP",
+        "Content rich websites built with Drupal",
+        "Interactive Adobe Flash apps",
+        "Strong Git experience"
+      ]
+    },
+    {
+      "company": "Orditech",
+      "position": "Developer & Graphic Designer",
+      "website": "http://orditech.be",
+      "startDate": "2004-11-01",
+      "endDate": "2005-01-31",
+      "summary":
+        "Working in the company as a trainee, I learned a great deal there thanks to my mentor.",
+      "highlights": [
+        "Learned OOP with PHP5",
+        "Learned PostgreSQL",
+        "Carried prepress and web graphic work"
+      ]
+    }
+  ],
+  "volunteer": [],
+  "education": [
+    {
+      "institution": "Pearson VUE",
+      "area": "Software Development",
+      "studyType": "Zend PHP 5 Certification",
+      "startDate": "2010-01-01",
+      "endDate": "2010-03-01",
+      "courses": []
+    },
+    {
+      "institution": "UMONS",
+      "area": "Software Development",
+      "studyType": "Master degree in Computer Science",
+      "startDate": "2005-09-01",
+      "endDate": "2009-06-30",
+      "courses": [
+        "Systems and networks",
+        "Database theory",
+        "Datamining",
+        "Software engineering and architecturing",
+        "Algorithmic",
+        "Thesis : Informatique et sudoku, a NP-complete problem."
+      ]
+    },
+    {
+      "institution": "Haute Ecole Albert Jacquard",
+      "area": "Graphic design",
+      "studyType": "Bachelor degree in Computer Graphics",
+      "startDate": "2002-09-01",
+      "endDate": "2005-06-30",
+      "courses": [
+        "Conceptual : capacity to apply an inventive mind to real world constraints.",
+        "Visual : consciousness of an adapted communication to graphic languages and multimedia environment.",
+        "Technical : from graphic softwares to programming, face diversity and quick web and multimedia evolution.",
+        "Final work : Leçons toutes faites, a webapp built with Fusebox."
+      ]
+    }
+  ],
+  "awards": [
+    {
+      "title": "Award",
+      "date": "2014-11-01",
+      "awarder": "Company",
+      "summary": "There is no spoon."
+    }
+  ],
+  "publications": [
+    {
+      "name": "Publication",
+      "publisher": "Company",
+      "releaseDate": "2014-10-01",
+      "website": "http://publication.com",
+      "summary": "Description..."
+    }
+  ],
+  "skills": [
+    {
+      "name": "Frontend development",
+      "level": "Master",
+      "keywords": [
+        "Javascript",
+        "ES6",
+        "React",
+        "Vue.js",
+        "Webpack",
+        "PostCSS",
+        "Flux"
+      ]
+    },
+    {
+      "name": "Backend Development",
+      "level": "Good",
+      "keywords": [
+        "Metaprogramming",
+        "Nodejs",
+        "Elixir",
+        "Python",
+        "PostgreSQL",
+        "NoSQL",
+        "GraphQL"
+      ]
+    },
+    {
+      "name": "Tooling",
+      "level": "Good",
+      "keywords": ["Git (pro rebase)", "Packaging", "Jenkins"]
+    },
+    {
+      "name": "Architecture",
+      "level": "Good",
+      "keywords": [
+        "App state design",
+        "Client / Server systems",
+        "Service oriented"
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "name": "French",
+      "level": "Native"
+    },
+    {
+      "name": "English",
+      "level": "Fluent"
+    },
+    {
+      "name": "German",
+      "level": "Basics"
+    }
+  ],
+  "interests": [
+    {
+      "name": "Photography",
+      "keywords": ["Macro", "Gadgets"]
+    },
+    {
+      "name": "Fine drinks",
+      "keywords": [
+        "Oolong tea",
+        "Pu-Erh tea",
+        "Gong Fu Cha",
+        "Filter coffee",
+        "Saison beer"
+      ]
+    }
+  ],
+  "references": [
+    {
+      "name": "Lothar Schulz",
+      "reference":
+        "I had the pleasure to work with Aurelien in web project as part of a full fledged customer project. In a professional manner Aurelien bore the challenge of working with code he was new to with a lot of technical debt. He is an expert in Python and Django and considers always QA and development aspects as well as side effects to other teams. I'd love to work with Aurelien again."
+    },
+    {
+      "name": "Gabriel Camby",
+      "reference":
+        "Aurélien is a good lad on a human interaction level but development is where he shines. Thanks to his formation, he has great abstraction and optimisation skills which allows him to come up with well-thought-out procedures and algorithms. He has good development practices (e.g. useful code comments, meaningful branch strategy, etc.) and what matters a lot in this job: good intuition and resourcefulness."
+    },
+    {
+      "name": "Antoine Servais",
+      "reference":
+        "If I had three words to describe Aurélien, I will say clever, conscientious and Professional. Aurélien has the capacity to explain you lots of things in a very simple way. As a true web addict, Aurelien is open minded and really talented in his work."
+    }
+  ]
+}
