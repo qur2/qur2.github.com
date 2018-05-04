@@ -85,5 +85,12 @@ module.exports = {
         })
       )
     }
+  },
+  generate: {
+    routes: () =>
+      new Promise((resolve, reject) => {
+        const meta = require("./toc")
+        resolve(Object.keys(meta).map(baseName => `/blog/${baseName}`))
+      })
   }
 }
