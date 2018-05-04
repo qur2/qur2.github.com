@@ -4,7 +4,7 @@
       <nuxt-link
         :key="item.path"
         :to="item.path"
-        exact
+        :exact="item.path === '/'"
       >
         {{ item.label }}
       </nuxt-link>
@@ -18,12 +18,16 @@ export default {
     return {
       items: [
         {
+          path: "/",
+          label: "Home"
+        },
+        {
           path: "/resume",
           label: "Resume"
         },
         {
-          path: "/",
-          label: "Home"
+          path: "/blog",
+          label: "Blog"
         }
       ]
     }
@@ -31,7 +35,7 @@ export default {
 }
 </script>
 
-<style lang="postcss">
+<style lang="stylus">
 .topbar {
   display: flex;
   justify-content: space-around;

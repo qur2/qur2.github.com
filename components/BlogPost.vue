@@ -6,9 +6,14 @@
     >
       <div class="blogpost-overlay">
         <h1>{{ fm.title }}</h1>
-        <h2>{{ fm.description }}</h2>
+        <h3>{{ fm.description }}</h3>
         <sub>{{ fm.author }}</sub>
         <sub>{{ niceDate }}</sub>
+        <image-credit
+          v-if="fm.cover_credit"
+          :credit="fm.cover_credit"
+          class="cover-caption"
+        />
       </div>
     </div>
     <slot name="content" />
@@ -17,10 +22,13 @@
 
 <script>
 import format from "date-fns/format"
-// import "github-markdown-css/github-markdown.css"
-// import "highlight.js/styles/gruvbox-dark.css"
 import toc from "~/toc"
+import ImageCredit from "~/components/ImageCredit"
+
 export default {
+  components: {
+    ImageCredit
+  },
   props: {
     slug: {
       type: String,
@@ -29,17 +37,16 @@ export default {
   },
   computed: {
     fm() {
-      console.log(toc, this.slug, toc[this.slug])
       return toc[this.slug]
     },
     niceDate() {
-      return format(this.fm.date, "MM/DD/YYYY")
+      return format(this.fm.date, "DD/MM/YYYY")
     }
   }
 }
 </script>
 
-<style lang="postcss">
+<style lang="stylus">
 .blogpost-cover {
   display: flex;
   align-items: center;
@@ -47,7 +54,6 @@ export default {
   max-width: 100%;
   position: relative;
   color: white;
-  margin-bottom: 1.5em;
 }
 .blogpost-overlay {
   width: 100%;
@@ -61,6 +67,12 @@ export default {
     height: 2em;
     line-height: 2em;
   }
+}
+.cover-caption {
+  position: absolute;
+  right: 1em;
+  bottom: 1em;
+  font-size: .75em;
 }
 .blogpost > :not(:first-child) {
   max-width: 44em;

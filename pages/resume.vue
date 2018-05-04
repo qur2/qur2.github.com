@@ -183,7 +183,7 @@ export default {
 }
 </script>
 
-<style lang="postcss">
+<style lang="stylus">
 .page-resume {
   font-size: responsive;
   font-family: "Open Sans", sans-serif;

@@ -1,5 +1,9 @@
+const path = require("path")
 const webpack = require("webpack")
 const execSync = require("child_process").execSync
+const poststylus = require("poststylus")
+const createMarkdown = require("vuepress/lib/markdown")
+
 const GIT_HEAD = execSync("git rev-parse --short head").toString("utf8")
 
 module.exports = {
@@ -17,8 +21,8 @@ module.exports = {
   },
   css: [
     "normalize.css",
-    "~/css/md.css"
-    // "vuepress/lib/default-theme/styles/theme.styl"
+    "prismjs/themes/prism-tomorrow.css",
+    "vuepress/lib/default-theme/styles/theme.styl"
   ],
   /*
   ** Customize the progress bar color
@@ -31,11 +35,6 @@ module.exports = {
     babel: {
       plugins: ["preval"]
     },
-    postcss: [
-      require("postcss-nested")(),
-      require("postcss-responsive-type")(),
-      require("postcss-hexrgba")()
-    ],
     /*
     ** Run ESLint on save
     */
@@ -48,16 +47,41 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
+      // https://github.com/vuejs/vuepress/blob/14d4d2581f4b7c71ea71a41a1849f582090edb97/lib/webpack/createBaseConfig.js#L92
       config.module.rules.push({
         test: /\.md$/,
-        loader: "vue-markdown-loader"
-        // options: markdown
+        use: [
+          {
+            loader: "vue-loader",
+            options: {
+              compilerOptions: {
+                preserveWhitespace: false
+              }
+            }
+          },
+          {
+            loader: require.resolve("vuepress/lib/webpack/markdownLoader"),
+            options: {
+              sourceDir: "./blog",
+              markdown: createMarkdown()
+            }
+          }
+        ]
       })
+      // fake the temp folder used in vuepress
+      config.resolve.alias["@temp"] = path.resolve(__dirname, "temp")
       config.plugins.push(
         new webpack.DefinePlugin({
-          // "process.VERSION": JSON.stringify(require("./package.json").version),
-          // Set when running command in shell
           "process.GIT_HEAD": JSON.stringify(GIT_HEAD)
+        })
+      )
+      config.plugins.push(
+        new webpack.LoaderOptionsPlugin({
+          options: {
+            stylus: {
+              use: [poststylus(["autoprefixer", "rucksack-css"])]
+            }
+          }
         })
       )
     }

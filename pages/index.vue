@@ -46,7 +46,7 @@ export default {
 }
 </script>
 
-<style lang="postcss">
+<style lang="stylus">
 body.paper {
   background: url(../assets/bg-paper.png) repeat;
 }

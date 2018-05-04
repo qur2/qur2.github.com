@@ -5,8 +5,14 @@ author = "Aurélien Scoubeau"
 lang = "en"
 date = 2017-05-31T22:22:22Z
 tags = ["javascript", "vue.js", "animation"]
--->
+cover = "http://res.cloudinary.com/qur2/image/upload/c_crop,g_center,h_711,q_auto:good,w_1440/v1525438510/blog/droste-clock_ancjhf.jpg"
 
+[cover_credit]
+by = "Jlhopgood"
+by_url = "https://www.flickr.com/photos/jlhopgood/"
+via = "Flickr (Creative Commons)"
+via_url = "https://www.flickr.com/photos/jlhopgood/6795353385/"
+-->
 Recently, I was doing some CSS animation work with [Vue.js](https://vuejs.org/) and I had to chain animations. In general, I try to split the work into small and workable units. In case of an animation, if possible, I split it into smaller standalone bits. I find it easier to work with, and then it just needs to be orchestrated for the final result. I can also reuse the standalone parts if needed.
 Also, because I was using vue, I wanted to use its small but powerful API for the animation. Another requirement was to drive the animation based on data / props of my components. Let's dig into it!
 

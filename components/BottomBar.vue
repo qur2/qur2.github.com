@@ -22,7 +22,7 @@ export default {
 }
 </script>
 
-<style lang="postcss">
+<style lang="stylus">
 footer.bottom-bar {
   position: relative;
   text-align: center;

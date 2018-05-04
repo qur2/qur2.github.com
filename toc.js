@@ -1,5 +1,4 @@
 // @preval
-const path = require("path")
 const { readdirSync, readFileSync } = require("fs")
 const { join } = require("path")
 const toml = require("toml")
@@ -14,7 +13,6 @@ const identity = x => x
 // const isVue = (filename) => filename.slice(-4) === '.vue'
 const isOfType = (ext, filename) => filename.slice(-ext.length) === ext
 const indexBy = (array, key) =>
-  console.log(array) ||
   array.reduce((acc, x) => {
     acc[x[key]] = x
     return acc
@@ -24,20 +22,30 @@ const indexBy = (array, key) =>
 //   .filter(filter)
 //   .map((fileName) => fileName.slice(0, fileName.lastIndexOf('.')))
 
+const parseMeta = blob => {
+  try {
+    return toml.parse(blob)
+  } catch (error) {
+    // Make it obvious in console when that happens
+    error.message = `[TOML] ${error.message}`
+    throw error
+  }
+}
+// oui
 const listFilesMeta = (basePath, filter = identity) => {
   return readdirSync(basePath)
     .filter(filter)
     .map(fileName => {
       const buf = readFileSync(join(basePath, fileName), "utf8")
-      const fmStart = buf.indexOf("<!--") + 4
+      const fmStart = buf.indexOf("<!--")
       const fmEnd = buf.indexOf("-->")
-      return fmEnd === -1 || fmStart === 3
+      return fmEnd === -1 || fmStart === -1
         ? false
         : Object.assign(
             {
               baseName: fileName.slice(0, fileName.lastIndexOf("."))
             },
-            toml.parse(buf.slice(fmStart, fmEnd))
+            parseMeta(buf.slice(fmStart + 4, fmEnd))
           )
     })
     .filter(Boolean)
@@ -46,7 +54,6 @@ const listFilesMeta = (basePath, filter = identity) => {
 const frontmatter = (basePath, type, metaFilter = identity) => {
   const typeFilter = basePath => isOfType(type, basePath)
   const list = listFilesMeta(basePath, typeFilter).filter(metaFilter)
-  console.log(list)
   return list
   // .reduce(
   //   (dict, { baseName, meta }) =>
@@ -65,16 +72,12 @@ module.exports = Object.assign(
     []
       .concat(
         frontmatter(
-          path.join(process.cwd(), "pages", "lab"),
+          join(process.cwd(), "pages", "blog"),
           ".vue",
           filterDrafts
-        ).map(fm => Object.assign({ category: "lab" }, fm))
+        ).map(fm => Object.assign({ category: "Lab" }, fm))
       )
-      .concat(
-        frontmatter(path.join(process.cwd(), "blog"), ".md", filterDrafts).map(
-          fm => Object.assign({ category: "blog" }, fm)
-        )
-      ),
+      .concat(frontmatter(join(process.cwd(), "blog"), ".md", filterDrafts)),
     "baseName"
   )
 )

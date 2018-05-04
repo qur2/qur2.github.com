@@ -13,12 +13,12 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
-    "chroma-js": "^1.3.6",
+    "chroma-js": "^1.3.7",
     "d3-shape": "^1.2.0",
     "nuxt": "^1.0.0"
   },
   "devDependencies": {
-    "babel-eslint": "^8.2.1",
+    "babel-eslint": "^8.2.3",
     "babel-plugin-preval": "^1.6.4",
     "date-fns": "^1.29.0",
     "eslint": "^4.15.0",
@@ -26,14 +26,13 @@
     "eslint-friendly-formatter": "^3.0.0",
     "eslint-loader": "^1.7.1",
     "eslint-plugin-prettier": "^2.6.0",
-    "eslint-plugin-vue": "^4.0.0",
-    "github-markdown-css": "^2.10.0",
+    "eslint-plugin-vue": "^4.5.0",
     "normalize.css": "^8.0.0",
-    "postcss-hexrgba": "^1.0.0",
-    "postcss-nested": "^3.0.0",
-    "postcss-responsive-type": "^1.0.0",
+    "poststylus": "^1.0.0",
+    "rucksack-css": "^1.0.2",
     "toml": "^2.3.3",
-    "vue-markdown-loader": "^2.4.1"
+    "vue-markdown-loader": "^2.4.1",
+    "vuepress": "^0.6.1"
   },
   "prettier": {
     "semi": false

@@ -1,16 +1,22 @@
 <!--
 title = "Image Quest"
 slug = "image-quest"
+category = "Lab"
 description = "Geometrical navigation for images"
 author = "Aurélien Scoubeau"
 lang = "en"
 date = 2016-09-21T21:21:21Z
 tags = ["javascript", "vue.js", "svg", "hud"]
+cover = "http://res.cloudinary.com/qur2/image/upload/c_crop,g_center,h_944,q_auto:good,w_1800,x_0/c_scale,h_711,w_1440/v1525362046/blog/image-quest-hero_uqo12z.png"
+[cover_credit]
+by = "an organic entity"
+via = "Fantasy Map Generator"
+via_url="https://azgaar.github.io/Fantasy-Map-Generator/"
 -->
 <template>
   <blog-post slug="image-quest">
     <template slot="content">
-      <article class="imagequest-demo markdown-body">
+      <article class="imagequest-demo content">
         <p>Like a comic viewer, it allows to zoom and cycle through areas of the picture.</p>
 
         <svg
@@ -59,18 +65,7 @@ tags = ["javascript", "vue.js", "svg", "hud"]
           />
         </svg>
 
-        <h2>How does it work?</h2>
-        <p>Here is the involved markup to set up the component:</p>
-
-        <SampleMarkup />
-
-        <p>Watch out for the key elements:</p>
-        <ul>
-          <li>The rectangles, which were drawn on top of the image, define the areas and the mini-display.</li>
-          <li>The layer that contains the rectangles has two attributes: id = zones and slot = zones.</li>
-          <li>The image is referenced from the SVG, not actually embedded.</li>
-        </ul>
-        <p>Those are still some manual steps to be performed, but hopefully it's straightforward to understand.</p>
+        <Markdown />
       </article>
     </template>
   </blog-post>
@@ -79,18 +74,18 @@ tags = ["javascript", "vue.js", "svg", "hud"]
 <script>
 import BlogPost from "~/components/BlogPost"
 import ImageQuest from "~/lab/imagequest/ImageQuest.vue"
-import SampleMarkup from "~/blog/image-quest-markup.md"
+import Markdown from "~/blog/image-quest.md"
 
 export default {
   components: {
     ImageQuest,
-    SampleMarkup,
+    Markdown,
     BlogPost
   }
 }
 </script>
 
-<style lang="postcss">
+<style lang="stylus">
 .imagequest-demo {
   margin: 1rem;
   padding: 1rem;

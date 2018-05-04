@@ -15,7 +15,6 @@ export default {
     BlogPost
   },
   asyncData({ route: { params } }) {
-    console.log(params)
     return import(`~/blog/${params.slug}.md`).then(() => ({ mdReady: true }))
   },
   data() {
