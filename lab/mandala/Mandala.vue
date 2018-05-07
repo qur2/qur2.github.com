@@ -1,52 +1,61 @@
 <template>
-  <div
-    :style="{width: width+'px', height: height+'px'}"
+  <svg
+    ref="svg"
+    :viewBox="viewBox"
+    :width="width"
+    :height="height"
     class="mandala"
   >
-    <svg
-      :viewBox="viewBox"
-      :width="width"
-      :height="height"
+    <g
+      fill="none"
+      stroke-width="1px"
     >
-      <g
-        fill="none"
-        stroke="black"
-        stroke-width="1px"
-      >
-        <template v-for="zone in zones">
-          <g
-            :key="zone"
-            :transform="zone"
-          >
-            <line
-              :x2="width"
-              y2="0"
-              x1="0"
-              y1="0"
-              stroke="purple"
-            />
-            <template v-for="curve in curves">
-              <path
-                :key="curve"
-                :d="curve"
-              />
-            </template>
+      <template v-for="c in circles">
+        <circle
+          :key="c"
+          :r="c"
+          x="0"
+          y="0"
+          class="guide"
+        />
+      </template>
+      <template v-for="zone in zones">
+        <g
+          :key="zone"
+          :transform="zone"
+        >
+          <line
+            :x2="width / 2"
+            y2="0"
+            x1="0"
+            y1="0"
+            class="guide"
+          />
+          <template v-for="curve in curves">
             <path
-              :d="theCurve"
-              stroke="olive"
+              :key="curve"
+              :d="curve"
+              stroke="black"
             />
-          </g>
-        </template>
-      </g>
-    </svg>
-    <div
+          </template>
+          <path
+            :d="theCurve"
+            stroke="olive"
+          />
+        </g>
+      </template>
+    </g>
+    <rect
       ref="canvas"
-      class="touchpad"
+      x="0"
+      y="0"
+      width="50%"
+      height="50%"
       @mousemove="draw"
       @mousedown="startDrawing"
       @mouseup="stopDrawing"
     />
-  </div>
+  </svg>
 </template>
 
 <script>
@@ -69,20 +78,11 @@ export default {
   },
   data() {
     return {
+      pt: null,
       drawing: false,
       canvas: null,
       theLine: [],
-      lines: [
-        [
-          [0.0, 10.0],
-          [5.5, 35.0],
-          [34.0, 7.0],
-          [36.5, 8.0],
-          [59.0, 41.5],
-          [62.5, 38.0],
-          [66.5, 12.0]
-        ]
-      ]
+      lines: []
     }
   },
   computed: {
@@ -103,6 +103,9 @@ export default {
         new Array(this.segments),
         (_, index) => `rotate(${index * 360 / this.segments})`
       )
+    },
+    circles() {
+      return Array.from(new Array(10), (_, index) => (index + 1) * 25)
     }
   },
   mounted() {
@@ -116,14 +119,26 @@ export default {
       right
     } = this.$refs.canvas.getBoundingClientRect()
     this.canvas = { width, height, top, left, bottom, right }
+    // Create an SVGPoint for future math
+    this.pt = this.$refs.svg.createSVGPoint()
   },
   methods: {
+    // @see https://stackoverflow.com/a/10298843
+    cursorPoint(evt) {
+      // Get point in global SVG space
+      const { pt } = this
+      const { svg } = this.$refs
+      pt.x = evt.clientX
+      pt.y = evt.clientY
+      return pt.matrixTransform(svg.getScreenCTM().inverse())
+    },
     startDrawing() {
       this.drawing = true
     },
     draw(evt) {
       if (this.drawing) {
-        this.theLine.push(this.getMousePos(evt))
+        const pt = this.cursorPoint(evt)
+        this.theLine.push([pt.x, pt.y])
       }
     },
     stopDrawing() {
@@ -133,37 +148,21 @@ export default {
         this.lines.push(this.theLine.filter((p, i) => !(i % 5)))
       }
       this.theLine = []
-    },
-    getMousePos(evt) {
-      const x = Math.floor(
-        (evt.clientX - this.canvas.left) / this.canvas.width * this.canvas.width
-      )
-      const y = Math.floor(
-        (evt.clientY - this.canvas.top) /
-          this.canvas.height *
-          this.canvas.height
-      )
-      return [x, y]
     }
   }
 }
 </script>
 
-<style lang="postcss">
+<style lang="stylus">
 .mandala {
-  position: relative;
+  width: 100%;
 
-  & .touchpad {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 50%;
-    height: 50%;
-    background-color: rgba(0, 0, 0, 0.2);
+  & rect:last-child {
+    fill: rgba(0, 0, 0, 0.2);
   }
 
-  & svg {
-    width: 100%;
+  & .guide {
+    stroke: rgba(#000, 0.25);
   }
 }
 </style>

@@ -16,13 +16,26 @@ via_url = "https://onojk123.deviantart.com/art/Creative-Commons-Mandala-44-66400
 <template>
   <blog-post slug="mandala">
     <template slot="content">
-      <div class="demo-mandala">
-        <mandala
-          :width="500"
-          :height="500"
-          :segments="29"
-        />
-      </div>
+      <article class="imagequest-demo content">
+        <p>Draw some shapes in the lower right corner, see it being repeated around the center!</p>
+
+        <div class="demo-mandala">
+          <mandala
+            :width="500"
+            :height="500"
+            :segments="12"
+          />
+        </div>
+        
+        <p>Provides a control panel to:</p>
+        <ul>
+          <li>Choose the number of zones</li>
+          <li>Show / hide the guides</li>
+          <li>Show the stack of lines</li>
+          <li>Style the lines individually</li>
+          <li>Download SVG file</li>
+        </ul>
+      </article>
     </template>
   </blog-post>
 </template>
