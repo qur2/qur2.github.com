@@ -77,7 +77,8 @@ module.exports = Object.assign(
           filterDrafts
         ).map(fm => Object.assign({ category: "Lab" }, fm))
       )
-      .concat(frontmatter(join(process.cwd(), "blog"), ".md", filterDrafts)),
+      .concat(frontmatter(join(process.cwd(), "blog"), ".md", filterDrafts))
+      .sort((a, b) => b.date - a.date),
     "baseName"
   )
 )
