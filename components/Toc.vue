@@ -11,7 +11,6 @@
 </template>
 
 <script>
-import toc from "~/toc"
 import TocEntry from "./TocEntry"
 
 export default {
