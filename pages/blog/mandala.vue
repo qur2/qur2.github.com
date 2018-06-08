@@ -4,6 +4,7 @@ description = "Draw your very own mandala"
 author = "Aurélien Scoubeau"
 lang = "en"
 date = 2017-06-20T20:20:20Z
+update = 2018-05-07T19:50:00Z
 tags = ["javascript", "vue.js", "svg", "d3.js"]
 draft = true
 cover = "http://res.cloudinary.com/qur2/image/upload/c_crop,h_711,q_auto:good,w_1440/v1525446153/blog/mandala-8bit_qh8gbo.png"
