@@ -1,14 +1,19 @@
 <template>
   <div class="toc-item">
-    <img
-      :src="meta.cover"
+    <nuxt-link :to="to">
+      <img
+        :src="meta.cover"
+      >
+    </nuxt-link>
+    <nuxt-link
+      :to="to"
+      class="toc-item-details"
     >
-    <div class="toc-item-details">
       <h4>{{ meta.title }}</h4>
       <desc>{{ meta.description }}</desc>
       <strong>{{ date }}</strong>
       <!-- <strong>By {{meta.author}} ({{meta.lang.toUpperCase()}})</strong> -->
-    </div>
+    </nuxt-link>
 
     <link
       href="https://fonts.googleapis.com/css?family=Domine|Open+Sans"
@@ -25,6 +30,10 @@ export default {
     meta: {
       type: Object,
       default: () => ({})
+    },
+    to: {
+      type: String,
+      default: () => ""
     }
   },
   computed: {
@@ -44,10 +53,10 @@ export default {
   box-shadow: 0px 1px 6px #ddd;
   margin: 0.5em;
   transition: opacity 0.1s linear;
-  opacity: .9;
+  opacity: 0.9;
 
   h4 {
-    font-family: "Domine", serif;
+    font-family: 'Domine', serif;
     margin: 0px;
   }
 
@@ -56,14 +65,19 @@ export default {
   }
 
   &:hover {
-    // transform: translateY(-3px);
     box-shadow: 0px 2px 9px #ddd;
     opacity: 1;
   }
 }
 
 .toc-item-details {
+  display: block;
   padding: 1em;
+  color: #2C3E57;
+
+  &:hover {
+    text-decoration: none !important;
+  }
 
   & em {
     font-style: normal;
