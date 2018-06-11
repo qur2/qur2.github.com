@@ -28,7 +28,17 @@ For detailed explanation on how things work, checkout the [Nuxt.js docs](https:/
 On user / organization repos, the master branch is used to serve static pages.
 
 ### Publishing
-The `dist` folder is ignored by default. However, in order to publish, it needs to be commited nevertheless. Just `git add -f dist/` should do the trick.
+The `dist` folder is ignored by default. Here is the complete workflow to commit it and push while not having it part of the main branch:
+
+```bash
+git co master
+npm run generate
+git add -f dist/
+git commit -m "build $(git log '--format=format:%H' master -1)"
+npm run publish # this will force push the dist folder
+git co nuxt
+git branch -D master
+```
 
 ### Assets
 Some icons come from https://www.iconfinder.com/iconsets/hand-drawn-academic-icons-2. There should be a link to give credit, however, there is no URL provided to do so.
