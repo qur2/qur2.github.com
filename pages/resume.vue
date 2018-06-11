@@ -291,7 +291,7 @@ export default {
     &:before {
       content: " ";
       width: 100%;
-      height: 1.48em;
+      height: 1.58em;
       display: block;
       background-image: url(../assets/bg-waves-round.svg);
       background-repeat: repeat-x;

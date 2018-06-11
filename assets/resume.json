@@ -57,12 +57,16 @@
     {
       "company": "Feingold Technologies",
       "position": "Senior Web Developer",
-      "website": "http://storecast.de",
+      "website": "https://feingoldtech.net",
       "startDate": "2017-02-01",
       "endDate": false,
       "summary":
-        "Reinforcing an experienced team of frontend developers, I lend my expertise for a fast moving project, with a focus on UI/UX. I'm also owner of a custom admin tool. The company setup is very good and I've never been so productive before in a coroporate environment.",
-      "highlights": ["More React work", "Acquainted with Rxjs"]
+        "Reinforcing an experienced team of frontend developers, I lend my expertise for a fast moving project, with a focus on UI/UX. I'm also the owner of an internal admin tool. The project relies fully on reactive programming, making the addition of new features a breeze.",
+      "highlights": [
+        "More React work",
+        "Acquainted with Rxjs",
+        "Real-world introduction to Typescript"
+      ]
     },
     {
       "company": "Storecast",
