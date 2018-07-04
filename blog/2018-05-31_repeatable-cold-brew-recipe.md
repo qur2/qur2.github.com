@@ -5,7 +5,7 @@ author = "Aurélien Scoubeau"
 lang = "en"
 date = 2018-05-31T20:20:22Z
 tags = ["coffee"]
-cover = "http://res.cloudinary.com/qur2/image/upload/c_fill,g_center,h_711,q_auto,w_1440/v1528461556/blog/IMG_20180531_204552925-01.jpg"
+cover = "https://res.cloudinary.com/qur2/image/upload/c_fill,g_center,h_711,q_auto,w_1440/v1528461556/blog/IMG_20180531_204552925-01.jpg"
 -->
 From my reading on the web:
  - Put 50g of freshly ground coffee in a big tea bag.

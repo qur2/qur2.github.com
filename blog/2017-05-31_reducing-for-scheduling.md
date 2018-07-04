@@ -5,7 +5,7 @@ author = "Aurélien Scoubeau"
 lang = "en"
 date = 2017-05-31T22:22:22Z
 tags = ["javascript", "vue.js", "animation"]
-cover = "http://res.cloudinary.com/qur2/image/upload/c_crop,g_center,h_711,q_auto:good,w_1440/v1525438510/blog/droste-clock_ancjhf.jpg"
+cover = "https://res.cloudinary.com/qur2/image/upload/c_crop,g_center,h_711,q_auto:good,w_1440/v1525438510/blog/droste-clock_ancjhf.jpg"
 
 [cover_credit]
 by = "Jlhopgood"
