@@ -46,7 +46,6 @@
       </template>
     </g>
     <rect
-      ref="canvas"
       x="0"
       y="0"
       width="50%"
@@ -80,7 +79,6 @@ export default {
     return {
       pt: null,
       drawing: false,
-      canvas: null,
       theLine: [],
       lines: []
     }
@@ -110,15 +108,6 @@ export default {
   },
   mounted() {
     // moving / resizing the element should trigger a refresh of this
-    const {
-      width,
-      height,
-      top,
-      left,
-      bottom,
-      right
-    } = this.$refs.canvas.getBoundingClientRect()
-    this.canvas = { width, height, top, left, bottom, right }
     // Create an SVGPoint for future math
     this.pt = this.$refs.svg.createSVGPoint()
   },
