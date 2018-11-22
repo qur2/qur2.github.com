@@ -47,9 +47,9 @@
         "url": "http://stackoverflow.com/users/2249185/qur2"
       },
       {
-        "network": "Google+",
-        "username": "",
-        "url": "https://plus.google.com/109883582351529784361/posts"
+        "network": "Lomography",
+        "username": "qur2",
+        "url": "https://www.lomography.com/homes/qur2"
       }
     ]
   },
@@ -61,11 +61,12 @@
       "startDate": "2017-02-01",
       "endDate": false,
       "summary":
-        "Reinforcing an experienced team of frontend developers, I lend my expertise for a fast moving project, with a focus on UI/UX. I'm also the owner of an internal admin tool. The project relies fully on reactive programming, making the addition of new features a breeze.",
+        "Reinforcing an experienced team of frontend developers, I lend my expertise for a fast moving project, with a focus on UI/UX. I'm also the owner of an internal admin tool. The project relies fully on reactive programming, making the addition of new features a breeze. On the human level, I help with recruiting and work with remote teams in Brazil and in the US, giving an occasional workshop about tech topics, such as testing.",
       "highlights": [
-        "More React work",
-        "Acquainted with Rxjs",
-        "Real-world introduction to Typescript"
+        "Everything React",
+        "Getting friendly with Rxjs",
+        "Real-world introduction to Typescript",
+        "Integrating with microservices"
       ]
     },
     {
@@ -137,7 +138,7 @@
       "startDate": "2009-09-01",
       "endDate": "2012-01-31",
       "summary":
-        "Setup as a web agency, I worked on very different projects. From large Drupal websites to interactive promotional material, we worked in an agile way and were able to deliver project fast.",
+        "Setup as a web agency, I worked on very different projects. From large Drupal websites to interactive promotional material, we worked in an agile way and were able to deliver projects fast.",
       "highlights": [
         "Rapid application development with Yii and CakePHP",
         "Content rich websites built with Drupal",
