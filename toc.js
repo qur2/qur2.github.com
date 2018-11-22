@@ -3,7 +3,7 @@ const { readdirSync, readFileSync } = require("fs")
 const { join } = require("path")
 const toml = require("toml")
 
-const filterDrafts = ({ meta }) =>
+const filterDrafts = meta =>
   process.env.NODE_ENV === "production" ? !meta.draft : true
 
 const identity = x => x
@@ -51,19 +51,9 @@ const listFilesMeta = (basePath, filter = identity) => {
     .filter(Boolean)
 }
 
-const frontmatter = (basePath, type, metaFilter = identity) => {
+const frontmatter = (basePath, type) => {
   const typeFilter = basePath => isOfType(type, basePath)
-  const list = listFilesMeta(basePath, typeFilter).filter(metaFilter)
-  return list
-  // .reduce(
-  //   (dict, { baseName, meta }) =>
-  //     meta
-  //       ? Object.assign(dict, {
-  //           [baseName]: Object.assign({ id: baseName }, meta)
-  //         })
-  //       : dict,
-  //   {}
-  // )
+  return listFilesMeta(basePath, typeFilter)
 }
 
 module.exports = Object.assign(
@@ -71,13 +61,13 @@ module.exports = Object.assign(
   indexBy(
     []
       .concat(
-        frontmatter(
-          join(process.cwd(), "pages", "blog"),
-          ".vue",
-          filterDrafts
-        ).map(fm => Object.assign({ category: "Lab" }, fm))
+        frontmatter(join(process.cwd(), "pages", "blog"), ".vue")
+          .filter(filterDrafts)
+          .map(fm => Object.assign({ category: "Lab" }, fm))
       )
-      .concat(frontmatter(join(process.cwd(), "blog"), ".md", filterDrafts))
+      .concat(
+        frontmatter(join(process.cwd(), "blog"), ".md").filter(filterDrafts)
+      )
       .sort((a, b) => b.date - a.date),
     "baseName"
   )
