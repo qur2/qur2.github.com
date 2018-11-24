@@ -7,7 +7,7 @@ author = "Aurélien Scoubeau"
 lang = "en"
 date = 2016-09-21T21:21:21Z
 tags = ["javascript", "vue.js", "svg", "hud"]
-cover = "http://res.cloudinary.com/qur2/image/upload/c_crop,g_center,h_944,q_auto:good,w_1800,x_0/c_scale,h_711,w_1440/v1525362046/blog/image-quest-hero_uqo12z.png"
+cover = "https://res.cloudinary.com/qur2/image/upload/c_crop,g_center,h_944,q_auto:good,w_1800,x_0/c_scale,h_711,w_1440/v1525362046/blog/image-quest-hero_uqo12z.png"
 [cover_credit]
 by = "an organic entity"
 via = "Fantasy Map Generator"
