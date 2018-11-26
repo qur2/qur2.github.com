@@ -7,7 +7,10 @@
           v-for="profile in resume.basics.profiles"
           :key="profile.url"
         >
-          <a :href="profile.url">
+          <a
+            :href="profile.url"
+            target="_blank"
+          >
             <svg>
               <use
                 :href="`${sprite}#${profile.network.toLowerCase()}`"
@@ -17,6 +20,27 @@
           </a>
         </li>
       </ul>
+    </div>
+
+    <div>
+      <small>
+        Camera icon made by
+        <a
+          href="https://www.freepik.com/"
+          title="Freepik"
+        >Freepik</a>
+        from
+        <a
+          href="https://www.flaticon.com/"
+          title="Flaticon"
+        >www.flaticon.com</a>
+        is licensed by
+        <a
+          href="http://creativecommons.org/licenses/by/3.0/"
+          title="Creative Commons BY 3.0"
+          target="_blank"
+        >CC 3.0 BY</a>
+      </small>
     </div>
 
     <link
@@ -108,6 +132,10 @@ section.pop {
   li a:hover {
     color: #000;
     fill: #000;
+  }
+  small {
+    display: block;
+    margin-top: 3em;
   }
 }
 </style>
