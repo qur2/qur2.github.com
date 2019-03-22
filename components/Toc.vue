@@ -4,7 +4,7 @@
       <toc-entry
         :key="m.baseName"
         :meta="m"
-        :to="`${baseUrl}${m.baseName}`"
+        :to="`/${baseUrl}${m.baseName}`"
       />
     </template>
   </div>
