@@ -16,11 +16,11 @@
   "dependencies": {
     "chroma-js": "^1.4.0",
     "d3-shape": "^1.2.2",
-    "nuxt": "^2.2.0"
+    "nuxt": "^2.15.8"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.6",
-    "babel-plugin-preval": "^1.6.4",
+    "babel-plugin-preval": "^5.1.0",
     "date-fns": "^1.29.0",
     "eslint": "^4.15.0",
     "eslint-config-prettier": "^2.10.0",
@@ -33,7 +33,7 @@
     "rucksack-css": "^1.0.2",
     "toml": "^2.3.3",
     "vue-markdown-loader": "^2.4.1",
-    "vuepress": "^0.6.1"
+    "vuepress": "^1.9.7"
   },
   "prettier": {
     "semi": false
