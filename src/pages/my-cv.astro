@@ -1,0 +1,159 @@
+---
+import '@fontsource-variable/playfair-display';
+// Supports weights 100-900
+import '@fontsource-variable/noto-sans';
+import Layout from '../layouts/Resume.astro';
+import {basics, work, skills, languages, interests, education as edu, expertise, quotes} from '../stores/resume.json';
+import FormattedDate from '../components/FormattedDate.astro'
+
+
+const messWithLineBreaks = (str: string) => str.replaceAll('I ', 'I&nbsp;')
+
+const formatLevel = (n: string | number | undefined) => {
+    if (!n) return
+    return `<svg height="12" width="12" viewBox="0 0 12 12">
+    <circle r="5.5" cx="6" cy="6" fill="black" stroke="black" stroke-width="1" class="opacity-50" />
+    <circle r="3" cx="6" cy="6" fill="transparent"
+    stroke="rgba(255,255,255,.8)"
+    stroke-width="6"
+    stroke-dasharray="calc(${n} / 100 * calc(6 * 3.1415)) calc(6 * 3.1415)"
+    transform="rotate(-90) translate(-12)" />
+    </svg>`
+}
+
+const iconMap = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 2 46 48">
+<path d="M24 4c-7.73 0-14 6.27-14 14 0 10.5 14 26 14 26s14-15.5 14-26c0-7.73-6.27-14-14-14zm0 19c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z" fill="none" stroke="black" stroke-width="3"/>
+<path d="M0 0h48v48h-48z" fill="none"/>
+</svg>`
+const iconPhone = `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m20.487 17.14-4.065-3.696a1.001 1.001 0 0 0-1.391.043l-2.393 2.461c-.576-.11-1.734-.471-2.926-1.66-1.192-1.193-1.553-2.354-1.66-2.926l2.459-2.394a1 1 0 0 0 .043-1.391L6.859 3.513a1 1 0 0 0-1.391-.087l-2.17 1.861a1 1 0 0 0-.29.649c-.015.25-.301 6.172 4.291 10.766C11.305 20.707 16.323 21 17.705 21c.202 0 .326-.006.359-.008a.992.992 0 0 0 .648-.291l1.86-2.171a.997.997 0 0 0-.085-1.39z" fill="none" stroke="black" stroke-width="1.5"/></svg>`
+const iconMail = `<svg viewBox="1 1 30 30" xmlns="http://www.w3.org/2000/svg"><title/><path d="M28,13a1,1,0,0,0-1,1v8a1,1,0,0,1-1,1H6a1,1,0,0,1-1-1V14a1,1,0,0,0-2,0v8a3,3,0,0,0,.88,2.12A3,3,0,0,0,6,25H26a3,3,0,0,0,2.12-.88A3,3,0,0,0,29,22V14A1,1,0,0,0,28,13Z"/><path d="M15.4,18.8a1,1,0,0,0,1.2,0L28.41,9.94a1,1,0,0,0,.3-1.23,3.06,3.06,0,0,0-.59-.83A3,3,0,0,0,26,7H6a3,3,0,0,0-2.12.88,3.06,3.06,0,0,0-.59.83,1,1,0,0,0,.3,1.23ZM6,9H26a.9.9,0,0,1,.28,0L16,16.75,5.72,9A.9.9,0,0,1,6,9Z"/></svg>`
+const iconWeb= `<svg fill="none" viewBox="-2 -2 32 32" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="M16.3382 1.94393L25.9705 9.82424L26.0201 9.8788C26.1701 10.0437 26.3998 10.3064 26.5943 10.6198C26.7798 10.9189 27 11.3686 27 11.8956V24.9976C27 26.1013 26.1068 27 25 27H18.7601C17.9317 27 17.2601 26.3284 17.2601 25.5V20.7939C17.2601 18.9948 15.8058 17.5405 14.0168 17.5405C12.2279 17.5405 10.7735 18.9948 10.7735 20.7939V25.5C10.7735 26.3284 10.102 27 9.27354 27H3C1.89318 27 1 26.1013 1 24.9976V11.7425C1 11.0901 1.36299 10.564 1.56986 10.3028C1.69049 10.1505 1.80873 10.0264 1.89631 9.94036C1.9407 9.89677 1.97877 9.86147 2.0074 9.83565C2.02175 9.8227 2.03384 9.81204 2.0433 9.80382L2.05551 9.79329L2.06007 9.7894L2.06278 9.7871C2.06278 9.7871 2.06356 9.78646 2.7075 10.5515L2.06356 9.78646L2.07352 9.77807L11.6288 1.94617C12.9452 0.685478 15.0206 0.684487 16.3382 1.94393ZM3.35246 11.3159L3.3468 11.3209C3.33673 11.33 3.31953 11.3459 3.29759 11.3674C3.25251 11.4117 3.19388 11.4736 3.13764 11.5446C3.07966 11.6178 3.038 11.6834 3.01374 11.7344C3.00661 11.7494 3.00238 11.7602 3 11.767V24.9976L3.00006 24.9992L3.0007 25H8.77354V20.7939C8.77354 17.8948 11.1188 15.5405 14.0168 15.5405C16.9149 15.5405 19.2601 17.8948 19.2601 20.7939V25H24.9993L24.9999 24.9992L25 24.9976V11.8956C25 11.8989 25.0008 11.8992 25 11.8956C24.9966 11.8812 24.9788 11.8095 24.8948 11.6742C24.8108 11.5389 24.7005 11.4037 24.588 11.2772L15.004 3.43645L14.9714 3.40439C14.4228 2.86484 13.5451 2.86525 12.997 3.40534L12.9644 3.43744L3.35246 11.3159Z" fill="black" fill-rule="evenodd"/></svg>`
+---
+
+<Layout
+    title="Resume"
+    description={`Resume ~ ${basics.name}`}
+>
+    <Fragment slot="left">
+        <h3 class="uppercase text-3xl typo">{basics.name}</h3>
+
+        <h3 class="font-light uppercase text-lg border-b-2 mt-4 mb-2 typp">Areas of Expertise</h3>
+        <p class="w-full flex flex-wrap justify-between">
+            {expertise.map(({name}) => (
+            <span class="text-nowrap mr-4">
+                {`${name}`}
+            </span>
+            ))}
+        </p>
+
+        <h3 class="font-light uppercase text-lg border-b-2 mt-4 mb-2 typp">Skills</h3>
+        <p class="w-full flex flex-wrap justify-between">
+            {skills.map(({name, level}) => (
+            <span class="text-nowrap mr-5">
+                {name} <span class="inline-flex ml-1" set:html={formatLevel(level)} />
+            </span>
+            ))}
+        </p>
+
+        <h3 class="font-light uppercase text-lg border-b-2 mt-4 mb-2 typp">Languages</h3>
+        <p class="w-full flex flex-wrap justify-between">
+            {languages.map(({name, level}) => (
+            <span class="text-nowrap mr-4">
+                {name} <span class="lowercase">({level})</span>
+            </span>
+            ))}
+        </p>
+
+        <h3 class="font-light uppercase text-lg border-b-2 mt-4 mb-2 typp">Favourite quote</h3>
+        <p class="w-full flex flex-wrap justify-between">
+            {quotes.slice(0, 1).map(({text, source}) => (
+            <blockquote class="mr-4">
+                <p class="italic">{text}</p>
+                <footer class="font-extralight ml-2 text-right leading-8">—{source}</footer>
+            </blockquote>
+            ))}
+        </p>
+
+        <h3 class="font-light uppercase text-lg border-b-2 mt-4 mb-2 typp">Passions</h3>
+        <p class="w-full flex flex-wrap justify-between">
+            {interests.map(({name}) => (
+            <span class="text-nowrap mr-4">
+                {name}
+            </span>
+            ))}
+        </p>
+    </Fragment>
+
+    <Fragment slot="right">
+        <h2 class="text-4xl mb-4 typo">{basics.label}</h2>
+        <p class="text-sm flex flex-wrap">
+            <span class="text-nowrap mr-4 flex items-center"><span class="w-4 h-4 inline-block mr-2" set:html={iconPhone}></span> {basics.phone}</span>
+            <span class="text-nowrap mr-4 flex items-center"><span class="w-4 h-4 inline-block mr-2" set:html={iconMail}></span> {basics.email}</span>
+            <span class="text-nowrap mr-4 flex items-center"><span class="w-4 h-4 inline-block mr-2" set:html={iconWeb}></span> {basics.website}</span>
+            <span class="text-nowrap mr-4 flex items-center"><span class="w-4 h-4 inline-block mr-2" set:html={iconMap}></span> {`${basics.location.city} ${basics.location.region !== basics.location.city ? `, ${basics.location.region}` : ''} (${basics.location.countryCode})`}</span>
+        </p>
+
+        <h3 class="font-light uppercase text-xl border-b-2 mt-8 mb-2 typp">Summary</h3>
+        <p class="text-justify">{basics.summary}</p>
+
+        <h3 class="font-light uppercase text-xl border-b-2 mt-4 mb-2 typp">Experience</h3>
+        <>{work.map((w) => (
+            <div class="grid grid-rows-flow grid-cols-flow font-light">
+                <h4 class="text-lg font-light col-span-2">
+                    {w.position}
+                </h4>
+                <span class="text-sm text-stone-700 mb-1 mt-[-.25em] row-start-2 col-start-2 text-right">
+                    <FormattedDate date={`${w.startDate}T00:00:10`}/> - {w.endDate ? <FormattedDate date={`${w.endDate}T00:00:10`} /> : 'present'}
+                </span>
+                <div class="mb-1 mt-[-.25em] row-start-2 col-start-1 flex items-center font-extralight text-stone-700">
+                    {w.company}
+                </div>
+            </div>
+            <p class="text-justify mb-1" set:html={messWithLineBreaks(w.summary)} />
+            <ul class="pl-6 mb-5 list-disc">{w.highlights.map((label) =>
+                <li>{label}</li>
+                )}</ul>
+            ))}</>
+
+        <h3 class="font-light uppercase text-xl border-b-2 mt-4 mb-2 typp">Education</h3>
+        <>{edu.map((e) => (
+            <div class="grid grid-rows-flow grid-cols-flow font-light">
+                <h4 class="text-lg col-span-2">
+                    {e.studyType}
+                </h4>
+                <span class="text-sm text-stone-700 mb-1 mt-[-.25em] row-start-2 col-start-2 text-right">
+                    <FormattedDate date={`${e.startDate}T00:00:10`}/> - {e.endDate ? <FormattedDate date={`${e.endDate}T00:00:10`} /> : 'present'}
+                </span>
+                <div class="mb-1 mt-[-.25em] row-start-2 col-start-1 font-extralight">
+                    {e.institution}
+                </div>
+            </div>
+
+            <!--ul class="list-disc pl-0 ml-6 mb-5">{e.courses.map((label) => <li>{label}</li>)}</ul-->
+            ))}</>
+    </Fragment>
+</Layout>
+
+<style>
+ .grid {
+   break-inside: avoid;
+ }
+ ul, p {
+     break-inside: avoid;
+     break-before: avoid;
+ }
+ ul {
+     @apply mb-4;
+ }
+ .typo {
+     font-family: 'Playfair Display Variable', serif;
+ }
+ .typp {
+     font-family: 'Noto Sans Variable', monospace;
+     letter-spacing: -.015em;
+ }
+ p, ul {
+     letter-spacing: -.015em;
+     font-weight: 300;
+ }
+</style>

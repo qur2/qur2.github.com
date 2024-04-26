@@ -1,0 +1,293 @@
+{
+  "basics": {
+    "name": "Aurélien Scoubeau",
+    "label": "Senior Software Engineer",
+    "picture": "",
+    "email": "aurelien.scoubeau@gmail.com",
+    "phone": "+49 176 98259453",
+    "website": "https://qur2.github.io",
+    "summary":
+      "I am a creative and motivated individual who is always seeking new challenges and opportunities to learn. Rigorous and solution-oriented, I leverage my own experience to craft innovative ideas. I am at my best when working with a focused and engaged team.",
+    "location": {
+      "address": "Schulzestraße 30",
+      "postalCode": "13187",
+      "city": "Berlin",
+      "countryCode": "DE",
+      "region": "Berlin"
+    },
+    "profiles": [
+      {
+        "network": "Github",
+        "username": "qur2",
+        "url": "https://github.com/qur2"
+      },
+      {
+        "network": "Linkedin",
+        "username": "AScoubeau",
+        "url": "https://www.linkedin.com/in/aurelienscoubeau"
+      },
+      {
+        "network": "Twitter",
+        "username": "AScoubeau",
+        "url": "https://twitter.com/Ascoubeau"
+      },
+      {
+        "network": "Flickr",
+        "username": "qur2",
+        "url": "https://www.flickr.com/photos/qur2/"
+      },
+      {
+        "network": "Stackoverflow",
+        "username": "qur2",
+        "url": "https://stackoverflow.com/users/2249185/qur2"
+      },
+      {
+        "network": "Lomography",
+        "username": "qur2",
+        "url": "https://www.lomography.com/homes/qur2"
+      }
+    ]
+  },
+  "work": [
+    {
+      "company": "Sharecare GmbH",
+      "position": "Staff Software Engineer & Senior Frontend Developer",
+      "website": "https://feingoldtech.net",
+      "startDate": "2017-02-01",
+      "endDate": "2024-06-30",
+      "summary":
+        "As part of the web team, I own parts of our React frontend and my main area of attention is the highly dynamic home feed. Over time, we ensured a smooth transition over few React versions, the arrival of hooks, the migration from Enzyme to React Testing Library. I also manage a cross-platform templating technology for all our clients to use. To achieve this, I work closely with our UI/X team. Additionally, I maintain a dynamic webview for mobile clients so that they display charts in a consistent manner. I have been giving internal workshops about testing and facilitating communication to conquer roadblocks.",
+      "highlights": [
+        "Front-End Development",
+        "Solution Architecture",
+        "Teamwork",
+        "Technical Documentation"
+      ]
+    },
+    {
+      "company": "Storecast",
+      "position": "Lead Web Developer",
+      "website": "http://storecast.de",
+      "startDate": "2015-09-07",
+      "endDate": "2017-01-31",
+      "summary":
+        "From point of sale projects to big online applications through static websites, everything runs in a browser nowadays. In that spirit, I selected a flexible set of libraries that work well together to bootstrap new projects as fast as possible. That includes mentoring people to bring them up to speed and managing our development power. The goal is to go from 0 to 100 in the least possible time.",
+      "highlights": [
+        "React & flux architectures",
+        "Nodejs clusters",
+        "Continuous integration"
+      ]
+    },
+    {
+      "company": "Txtr",
+      "position": "Architect & Technical Lead",
+      "website": "http://txtr.com",
+      "startDate": "2013-07-31",
+      "endDate": "2015-03-31",
+      "summary":
+        "Starting as a web developer, after moving a Django code base from Jython to CPython, I led efforts to drastically reduce rendering times of the whole system. I also led the creation of a micro-frontend for online ebook reading.",
+      "highlights": [
+        "Experience with Flask and Readium",
+        "Jinja2 & Django CMS internal mechanics",
+        "Metaprogramming in Python"
+      ]
+    },
+    {
+      "company": "Delivery Hero",
+      "position": "Software Developer",
+      "website": "http://deliveryhero.com",
+      "startDate": "2012-02-01",
+      "endDate": "2013-09-30",
+      "summary":
+        "Getting started by learning the guts of a nig Django codebase, I took part in the creation of a decoupled frontend based on Backbone.js + jQuery + SASS. My Javascript skills grew a lot, as well as my understanding of frontend architectures and REST in general.",
+      "highlights": [
+        "Javascript mastery",
+        "Antediluvian frontend tools",
+        "Part of a big team and a big company"
+      ]
+    },
+    {
+      "company": "TagExpert",
+      "position": "Web Developer",
+      "website": "http://tagexpert.be",
+      "startDate": "2009-09-01",
+      "endDate": "2012-01-31",
+      "summary":
+        "As a web agency, we completed a wide range of projects, including large Drupal websites and interactive promotional microsites. We utilized an agile approach to deliver projects quickly and efficiently.",
+      "highlights": [
+        "Rapid application development with Yii and CakePHP",
+        "Content rich websites built with Drupal",
+        "Interactive Adobe Flash apps",
+        "Strong Git experience"
+      ]
+    },
+    {
+      "company": "Orditech",
+      "position": "Developer & Graphic Designer",
+      "website": "http://orditech.be",
+      "startDate": "2004-11-01",
+      "endDate": "2005-01-31",
+      "summary": "Initially hired as a trainee, I received excellent mentoring and gained valuable experience.",
+      "highlights": [
+        "Object oriented programming in PHP5 + JOINs in PostgreSQL",
+        "Carried prepress and web graphic work"
+      ]
+    }
+  ],
+  "volunteer": [],
+  "education": [
+    {
+      "institution": "Pearson VUE",
+      "area": "Software Development",
+      "studyType": "Zend PHP 5 Certification",
+      "startDate": "2010-01-01",
+      "endDate": "2010-03-01",
+      "courses": []
+    },
+    {
+      "institution": "UMONS",
+      "area": "Software Development",
+      "studyType": "Master degree in Computer Science",
+      "startDate": "2005-09-01",
+      "endDate": "2009-06-30",
+      "courses": [
+        "Systems and networks",
+        "Database theory",
+        "Datamining",
+        "Software engineering and architecturing",
+        "Algorithmic",
+        "Thesis : Informatique et sudoku, a NP-complete problem."
+      ]
+    },
+    {
+      "institution": "Haute Ecole Albert Jacquard",
+      "area": "Graphic design",
+      "studyType": "Bachelor degree in Computer Graphics",
+      "startDate": "2002-09-01",
+      "endDate": "2005-06-30",
+      "courses": [
+        "Conceptual : capacity to apply an inventive mind to real world constraints.",
+        "Visual : consciousness of an adapted communication to graphic languages and multimedia environment.",
+        "Technical : from graphic softwares to programming, face diversity and quick web and multimedia evolution.",
+        "Final work : Leçons toutes faites, a webapp built with Fusebox."
+      ]
+    }
+  ],
+  "awards": [
+    {
+      "title": "Award",
+      "date": "2014-11-01",
+      "awarder": "Company",
+      "summary": "There is no spoon."
+    }
+  ],
+  "publications": [
+    {
+      "name": "Publication",
+      "publisher": "Company",
+      "releaseDate": "2014-10-01",
+      "website": "http://publication.com",
+      "summary": "Description..."
+    }
+  ],
+  "quotes": [
+    {"text": "Tell me and I forget, teach me and I may remember, involve me and I understand.", "source": "Xunzi"},
+    {"text": "If failure had no penalty success would not be a prize.", "source": "Terry Pratchett, Sourcery"}
+  ],
+  "expertise": [
+    {
+      "name": "Software Engineering",
+      "level": ""
+    },
+    {
+      "name": "System Architecture",
+      "level": "Good",
+      "keywords": [
+        "App state design",
+        "Client / Server systems",
+        "Service oriented"
+      ]
+    },
+    {"name": "Project Leadership"},
+    {"name": "Programming"},
+    {"name": "Communication"}
+  ],
+  "skills": [
+    {"name": "JavaScript", "level": 100},
+    {"name": "TypeScript", "level": 70},
+    {"name": "Python", "level": 60},
+    {
+      "name": "Git",
+      "level": 90,
+      "keywords": ["Git (pro rebase)", "Packaging", "Jenkins"]
+    },
+    {"name": "PostgreSQL", "level": 50},
+    {"name": "NoSQL", "level": 30},
+    {"name": "Elixir", "level": 30},
+    {"name": "Creative"}
+  ],
+  "languages": [
+    {
+      "name": "French",
+      "level": "Native"
+    },
+    {
+      "name": "English",
+      "level": "Fluent"
+    },
+    {
+      "name": "German",
+      "level": "Basic"
+    }
+  ],
+  "interests": [
+    {
+      "name": "Photography",
+      "keywords": ["Macro", "Gadgets"]
+    },
+    {
+      "name": "My dog"
+    },
+    {
+      "name": "Tea",
+      "keywords": [
+        "Oolong tea",
+        "Pu-Erh tea",
+        "Gong Fu Cha",
+        "Filter coffee",
+        "Saison beer"
+      ]
+    },
+    {
+      "name": "Camping",
+      "keyword": []
+    },
+    {
+      "name": "3D printing",
+      "keyword": []
+    },
+    {
+      "name": "Boardgames"
+    },
+    {
+      "name": "Role-playing games"
+    }
+  ],
+  "references": [
+    {
+      "name": "Lothar Schulz",
+      "reference":
+        "I had the pleasure to work with Aurelien in web project as part of a full fledged customer project. In a professional manner Aurelien bore the challenge of working with code he was new to with a lot of technical debt. He is an expert in Python and Django and considers always QA and development aspects as well as side effects to other teams. I'd love to work with Aurelien again."
+    },
+    {
+      "name": "Gabriel Camby",
+      "reference":
+        "Aurélien is a good lad on a human interaction level but development is where he shines. Thanks to his formation, he has great abstraction and optimisation skills which allows him to come up with well-thought-out procedures and algorithms. He has good development practices (e.g. useful code comments, meaningful branch strategy, etc.) and what matters a lot in this job: good intuition and resourcefulness."
+    },
+    {
+      "name": "Antoine Servais",
+      "reference":
+        "If I had three words to describe Aurélien, I will say clever, conscientious and Professional. Aurélien has the capacity to explain you lots of things in a very simple way. As a true web addict, Aurelien is open minded and really talented in his work."
+    }
+  ]
+}

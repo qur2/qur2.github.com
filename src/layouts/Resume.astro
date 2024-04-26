@@ -1,0 +1,39 @@
+---
+import Base from './Base.astro';
+
+type Props = {
+    title: string
+    description: string
+}
+
+const { title, description } = Astro.props;
+---
+
+<Base title={title} description={description}>
+   <a href="javascript:window.print?.()" slot="header-extra" class="rounded-md bg-stone-500 px-2 py-1 text-sm text-stone-50">Print as PDF</a>
+   <div class="resume relative flex flex-columns">
+      <div class="bg-stone-700 print:bg-inherit min-h-full basis-[30%] text-slate-50 print:text-inherit py-8 px-6 relative print:pt-0">
+          <div class="h-[12px] bg-stone-800 opacity-35 absolute top-0 right-0 w-full print:hidden"/>
+          <slot name="left"/>
+      </div>
+      <div class="main min-h-full basis-[70%] py-8 px-6 relative print:pt-0">
+          <div class="h-[12px] bg-stone-200 opacity-35 absolute top-0 right-0 w-full print:hidden"/>
+          <slot name="right"/>
+      </div>
+</div>
+</Base>
+
+<style>
+ @media print {
+     :global(body > footer.flex) {
+         @apply hidden;
+     }
+     .resume {
+         @apply aspect-a4;
+     }
+ }
+
+ @page {
+     margin: 1cm .5cm;
+ }
+</style>

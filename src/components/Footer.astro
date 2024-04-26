@@ -1,0 +1,11 @@
+---
+import {basics} from '$/stores/resume.json'
+
+const today = new Date();
+---
+
+<footer class="flex justify-between px-8 pt-10 pb-12 shadow-2xl text-stone-700 bg-stone-50">
+    <div>&copy; {today.getFullYear()} Aurélien Scoubeau. All rights reserved.<br />
+        <div class="text-stone-700 font-light">Refreshed @ <span class="text-sm">{today.toJSON()}</span></div></div>
+    <ul class="grid grid-rows-2 grid-flow-col">{basics.profiles.map(({network, url}) => <li class="inline mr-4"><a href={url} target="_blank">{network}</a></li>)}</ul>
+</footer>
